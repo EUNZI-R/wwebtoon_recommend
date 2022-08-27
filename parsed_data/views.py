@@ -21,7 +21,17 @@ def psg(request):
     # csv 저장후 후처리 과정으로 복구 가능
     writer = csv.writer(response)
     writer.writerow(['Webtoon Title', 'link'])
-    for (title, link) in BlogData.objects.values_list('title','link'):
-        writer.writerow([title, link])
-
+    
+    site = request.GET['site']
+    print(site)
+    if site=='naver':
+        for (title, link) in BlogData.objects.values_list('title','link'):
+            writer.writerow([title, link])
+    if site=='kakaopage':
+        for (title, link) in KakaopageData.objects.values_list('title','link'):
+            writer.writerow([title, link])
+    if site=='kakaowebtoon':
+        for (title, link) in KakaowebtoonData.objects.values_list('title','link'):
+            writer.writerow([title, link])
+            
     return response
