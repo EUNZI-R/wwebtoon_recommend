@@ -1,2 +1,5 @@
 chromedriver
 chromedriver.exe
+
+*.pyc
+__pycache__/
