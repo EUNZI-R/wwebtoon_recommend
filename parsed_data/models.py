@@ -5,6 +5,7 @@ from django.db import models
 class BlogData(models.Model):
     title = models.CharField(max_length=200)
     link = models.URLField()
+    image_file = models.ImageField(upload_to='items', blank=True)
 
     def __str__(self):
         return self.title
@@ -12,6 +13,7 @@ class BlogData(models.Model):
 class KakaopageData(models.Model):
     title = models.CharField(max_length=200)
     link = models.URLField()
+    # image_file = models.ImageField(upload_to='items', blank=True)
 
     def __str__(self):
         return self.title

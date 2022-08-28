@@ -19,7 +19,5 @@ from parsed_data import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gcsv/naver',views.psg),
-    path('gcsv/kakaoweb',views.psg),
-    path('gcsv/kakaopage',views.psg),
+    path('gcsv/',views.psg),
 ]
